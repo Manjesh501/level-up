@@ -24,8 +24,8 @@ def save_text_to_json(text: str, output_path: str):
 # Example usage
 if __name__ == "__main__":
     # Use correct relative path from the pipeline directory
-    pdf_path =r"C:\Users\TIWAR\Desktop\lvlup\naac-automation\data\raw\sample_ssr.pdf"
-    output_path = r"C:\Users\TIWAR\Desktop\lvlup\naac-automation\data\raw\sample_ssr.json"
+    pdf_path =r"C:\Users\DAMODAR\level-up\data\raw\sample_ssr.pdf"
+    output_path = r"C:\Users\DAMODAR\level-up\data\raw\sample_ssr.json"
     
     text = extract_text_from_pdf(pdf_path)
     save_text_to_json(text, output_path)
