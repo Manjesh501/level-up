@@ -1,30 +1,30 @@
 {
   "CRITERION I  : Curricular Aspects": {
     "predicted_criterion": "2. Teaching-Learning",
-    "confidence": 0.531
+    "confidence": 0.528
   },
   "CRITERION II : Teaching, Learning and Evaluation": {
-    "predicted_criterion": "1. Curricular Aspects",
-    "confidence": 0.5133
+    "predicted_criterion": "2. Teaching-Learning",
+    "confidence": 0.5293
   },
   "CRITERION III : Research and Consultancy": {
-    "predicted_criterion": "1. Curricular Aspects",
-    "confidence": 0.5011
+    "predicted_criterion": "2. Teaching-Learning",
+    "confidence": 0.5406
   },
   "CRITERION IV : Infrastructure and Learning Resources": {
     "predicted_criterion": "2. Teaching-Learning",
-    "confidence": 0.5181
+    "confidence": 0.5312
   },
   "CRITERION V  : Student Support and Progression": {
     "predicted_criterion": "2. Teaching-Learning",
-    "confidence": 0.5007
+    "confidence": 0.5374
   },
   "CRITERION VI : Governance and Leadership": {
     "predicted_criterion": "2. Teaching-Learning",
-    "confidence": 0.5167
+    "confidence": 0.5164
   },
   "CRITERION VII : Innovations and Best Practices": {
-    "predicted_criterion": "2. Teaching-Learning",
-    "confidence": 0.5397
+    "predicted_criterion": "1. Curricular Aspects",
+    "confidence": 0.5099
   }
 }

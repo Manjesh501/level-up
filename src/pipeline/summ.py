@@ -1,5 +1,6 @@
 from fastapi import FastAPI, UploadFile, HTTPException
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware  # Import CORS middleware
 from pydantic import BaseModel
 from typing import List
 import pdfplumber
@@ -10,6 +11,15 @@ import re
 
 # Initialize FastAPI app
 app = FastAPI(title="NAAC SSR Summarizer API", version="1.0")
+
+# Add CORS middleware to allow requests from your frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # Allow your frontend origin
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all methods
+    allow_headers=["*"],  # Allow all headers
+)
 
 # Initialize NLP and summarization models
 nlp = spacy.load("en_core_web_lg")
@@ -121,6 +131,10 @@ class SSRSummarizer:
         return findings[:5]  # Return top 5 critical findings
 
 
+class TextInput(BaseModel):
+    input_text: str
+
+
 @app.get("/")
 async def root():
     return {"message": "Welcome to the NAAC SSR Summarizer API. Use /docs for API documentation."}
@@ -132,11 +146,11 @@ async def favicon():
 
 
 @app.post("/process-text/")
-async def process_text(input_text: str):
+async def process_text(text_input: TextInput):
     """Process plain text input"""
     try:
         summarizer = SSRSummarizer()
-        result = summarizer.process_ssr(input_text)
+        result = summarizer.process_ssr(text_input.input_text)
         return JSONResponse(content=result)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
